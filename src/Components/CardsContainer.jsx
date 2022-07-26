@@ -33,9 +33,13 @@ const CardWrapper = styled.section`
   border-raduis: 10px;
   display: flex;
   flex-direction: column;
-  max-width: 80vw;
-  @media (min-width: 768px) {
+  width: 80vw;
+  max-width: 500px;
+  min-width: 320px;
+  min-height: fit-content;
+  @media (min-width: 1024px) {
     flex-direction: row;
+    max-width: none;
   }
 `;
 

@@ -15,14 +15,22 @@ const Card = styled.div`
   &:last-child {
     border-radius: 0 0 10px 10px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  @media (min-width: 1024px) {
+    text-align: start;
+    display: block;
     &:first-child {
       border-radius: 10px 0 0 10px;
     }
     &:last-child {
       border-radius: 0 10px 10px 0;
     }
-    padding-block-end: 5rem;
+    padding-block-end: 2rem;
   }
 `;
 const Title = styled.h1`
@@ -36,7 +44,11 @@ const Content = styled.p`
   color: ${({ theme }) => theme.color.para};
   font-family: ${({ theme }) => theme.fontFamily.text};
   line-height: 1.8rem;
-  padding-inline-end: 2rem;
+  max-width: 300px;
+  @media (min-width: 1024px) {
+    line-height: 2rem;
+    padding-inline-end: 3rem;
+  }
 `;
 const Btn = styled.button`
   color: ${(props) => props.color};
@@ -53,9 +65,8 @@ const Btn = styled.button`
     color: white;
     outline: 2px solid white;
   }
-  @media (min-width: 768px) {
-    position: absolute;
-    bottom: 20px;
+  @media (min-width: 1024px) {
+    margin-top: 2rem;
   }
 `;
 const Cards = ({ name, color, content, img }) => {
